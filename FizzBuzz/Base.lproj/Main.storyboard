@@ -1,25 +1,137 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FizzBuzz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" alpha="0.5" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGV-fU-dKn">
+                                <rect key="frame" x="479" y="545" width="101" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="resetButton"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="0.97254901960784312" green="0.95294117647058818" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJF-hh-gek"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MP-J9-w58">
+                                <rect key="frame" x="60" y="60" width="480" height="480"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqk-KD-NiX">
+                                        <rect key="frame" x="0.0" y="0.0" width="230.5" height="230.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="numberButton"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
+                                        <state key="normal" title="0" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="daX-0M-eSk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pN-1k-rEc">
+                                        <rect key="frame" x="249" y="0.0" width="230.5" height="230.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzButton"/>
+                                        <state key="normal" image="champagne" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFq-6Y-E10"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDl-ew-2gl">
+                                        <rect key="frame" x="0.0" y="249" width="230.5" height="230.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="buzzButton"/>
+                                        <state key="normal" image="lightning" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ik-i2-kaQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tz-3A-ItP">
+                                        <rect key="frame" x="249" y="249" width="230.5" height="230.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzbuzzButton"/>
+                                        <state key="normal" image="space" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AZq-LD-mV5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sDl-ew-2gl" secondAttribute="bottom" id="22b-nG-dX6"/>
+                                    <constraint firstItem="7Tz-3A-ItP" firstAttribute="height" secondItem="8MP-J9-w58" secondAttribute="height" multiplier="0.48" id="4VP-v1-QIK"/>
+                                    <constraint firstItem="8pN-1k-rEc" firstAttribute="top" secondItem="8MP-J9-w58" secondAttribute="top" id="685-Rt-IYz"/>
+                                    <constraint firstItem="8pN-1k-rEc" firstAttribute="height" secondItem="8MP-J9-w58" secondAttribute="height" multiplier="0.48" id="DYb-Lc-WFp"/>
+                                    <constraint firstItem="sDl-ew-2gl" firstAttribute="height" secondItem="8MP-J9-w58" secondAttribute="height" multiplier="0.48" id="GhE-vL-VXn"/>
+                                    <constraint firstItem="sDl-ew-2gl" firstAttribute="leading" secondItem="8MP-J9-w58" secondAttribute="leading" id="Nqy-e3-k9l"/>
+                                    <constraint firstItem="Rqk-KD-NiX" firstAttribute="leading" secondItem="8MP-J9-w58" secondAttribute="leading" id="PL8-rJ-hXt"/>
+                                    <constraint firstItem="8pN-1k-rEc" firstAttribute="width" secondItem="8MP-J9-w58" secondAttribute="width" multiplier="0.48" id="RUC-m7-TNU"/>
+                                    <constraint firstItem="Rqk-KD-NiX" firstAttribute="top" secondItem="8MP-J9-w58" secondAttribute="top" id="SRo-f8-gt3"/>
+                                    <constraint firstItem="sDl-ew-2gl" firstAttribute="width" secondItem="8MP-J9-w58" secondAttribute="width" multiplier="0.48" id="Yxd-XB-gfv"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Tz-3A-ItP" secondAttribute="bottom" id="kuY-YX-Zhg"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Tz-3A-ItP" secondAttribute="trailing" id="lVL-D7-dy1"/>
+                                    <constraint firstItem="Rqk-KD-NiX" firstAttribute="height" secondItem="8MP-J9-w58" secondAttribute="height" multiplier="0.48" id="mEJ-5Y-h4b"/>
+                                    <constraint firstItem="Rqk-KD-NiX" firstAttribute="width" secondItem="8MP-J9-w58" secondAttribute="width" multiplier="0.48" id="pRg-s0-nuF"/>
+                                    <constraint firstAttribute="width" secondItem="8MP-J9-w58" secondAttribute="height" multiplier="1:1" id="tG4-sj-39y"/>
+                                    <constraint firstItem="7Tz-3A-ItP" firstAttribute="width" secondItem="8MP-J9-w58" secondAttribute="width" multiplier="0.48" id="vbk-85-LwL"/>
+                                    <constraint firstAttribute="trailing" secondItem="8pN-1k-rEc" secondAttribute="trailing" id="z44-B2-u2H"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 / 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-zm-cUf">
+                                <rect key="frame" x="501" y="28" width="44" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.83412872365384616" blue="0.77178307887331554" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="main"/>
+                        <constraints>
+                            <constraint firstItem="8MP-J9-w58" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DFg-5P-6CS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l8b-zm-cUf" secondAttribute="trailing" constant="35" id="Kae-La-vNu"/>
+                            <constraint firstItem="8MP-J9-w58" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="LLk-pl-QGe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qGV-fU-dKn" secondAttribute="trailing" id="Uwt-Ba-7bJ"/>
+                            <constraint firstItem="l8b-zm-cUf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="cZz-Oj-5Qg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qGV-fU-dKn" secondAttribute="bottom" constant="15" id="dVC-45-lfM"/>
+                            <constraint firstItem="8MP-J9-w58" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fW9-X5-fqZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buzzButton" destination="sDl-ew-2gl" id="Ntx-Us-KEd"/>
+                        <outlet property="fizzButton" destination="8pN-1k-rEc" id="sxF-Iv-Ga3"/>
+                        <outlet property="fizzbuzzButton" destination="7Tz-3A-ItP" id="0kj-pm-ep3"/>
+                        <outlet property="numberButton" destination="Rqk-KD-NiX" id="khF-qq-TCj"/>
+                        <outlet property="resetButton" destination="qGV-fU-dKn" id="e68-R7-vux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="246" y="252"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_border" width="400" height="400"/>
+        <image name="champagne" width="80" height="82"/>
+        <image name="lightning" width="47" height="80"/>
+        <image name="space" width="75" height="80"/>
+    </resources>
 </document>
